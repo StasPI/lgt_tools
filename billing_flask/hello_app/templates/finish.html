@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}
+Биллинг Мегафон
+{% endblock %}
+{% block content %}
+<p><strong>Биллинг готов, теперь вы можете скачать его.</strong></p>
+<form>
+    <input value="Скачать" class="button" type="button" onclick="location.href='/get_xlsx'" />
+</form>
+{% endblock %}

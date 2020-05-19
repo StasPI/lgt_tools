@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+Биллинг Мегафон
+{% endblock %}
+{% block content %}
+<p><strong>Загрузите файл с биллингом и таблицу для расчетов.</strong></p>
+<p><strong>Файлы под одному к загрузке не принимаются.</strong></p>
+    <form method=post enctype=multipart/form-data>
+        <p><input type=file class="button" name=profile_first></p>
+        <p><input type=file class="button" name=profile_second></p>
+        <p><input type=submit class="button"  value=Загрузить></p>
+    </form>
+    <p><strong>Эти номера отсутствуют в базе:</strong></p>
+    <p><strong> {{unknown}} </strong></p>
+    <p><strong>По этим резервным номерам идут расходы или карточка не верно заполнена:</strong></p>
+    <p><strong> {{reserve}} </strong></p>
+    <p><strong>ВЫПОЛНИТЕ СТАРТОВЫЕ ДЕЙСТВИЯ ПОВТОРНО ПОСЛЕ ВНЕСЕНИЯ ИЗМЕНЕНИЙ В ФАЙЛЫ.</strong></p>
+{% endblock %}
+
