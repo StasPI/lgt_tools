@@ -1,6 +1,6 @@
 
 
-class JobTitle:
+class JobTitles:
     def __init__(self, job_title):
         self.job_title = job_title
 

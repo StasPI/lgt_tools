@@ -1,10 +1,12 @@
 
 
 class Clothes:
-    def __init__(self, type_of_clothing, model, size, job_title_list):
+    def __init__(self, type_of_clothing, model, size, suppliers, article, job_title_list):
         self.type_of_clothing = type_of_clothing
-        self.mode = model
+        self.model = model
         self.size = size
+        self.suppliers = suppliers
+        self.article = article
         self.job_title_list = job_title_list
 
     def add(self):

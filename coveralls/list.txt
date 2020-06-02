@@ -1,5 +1,15 @@
 create a database
+
 create dependencies
+
 enable classes to create
+
 basic processing logic of existing kits
+
 build a web interface for interaction
+    create a download page in bd
+
+
+
+заместитель генерального директора по безопасности и общехозяйственным вопросам
+заместитель генерального директора по экономике и административным вопросам
