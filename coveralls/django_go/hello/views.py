@@ -1,11 +1,12 @@
-from django.shortcuts import redirect
-from hello.models import LogMessage
-from hello.forms import LogMessageForm
 import re
 from datetime import datetime
+
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import ListView
+
+from hello.forms import DepartmentsForm, JobTitlesForm, LogMessageForm
+from hello.models import Departments, JobTitles, LogMessage
 
 
 class HomeListView(ListView):
@@ -19,10 +20,6 @@ class HomeListView(ListView):
 
 def about(request):
     return render(request, "hello/about.html")
-
-
-def contact(request):
-    return render(request, "hello/contact.html")
 
 
 def hello_there(request, name):
@@ -48,3 +45,26 @@ def log_message(request):
     else:
         return render(request, "hello/log_message.html", {"form": form})
 
+
+def job_titles(request):
+    form = JobTitlesForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            job_title = form.save(commit=False)
+            job_title.save()
+            return redirect("home")
+    else:
+        return render(request, "hello/job_titles.html", {"form": form})
+
+
+def departments(request):
+    form = DepartmentsForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            departments = form.save(commit=False)
+            departments.save()
+            return redirect("home")
+    else:
+        return render(request, "hello/departments.html", {"form": form})

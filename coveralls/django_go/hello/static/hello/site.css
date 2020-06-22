@@ -6,6 +6,15 @@ input[name=message] {
     width: 80%;
 }
 
+input[name=job_title] {
+    width: 80%;
+}
+
+input[name=department] {
+    width: 80%;
+}
+
+
 .navbar {
     background-color: lightslategray;
     font-size: 1em;

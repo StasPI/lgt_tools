@@ -1,6 +1,7 @@
 from django.urls import path
+
 from hello import views
-from hello.models import LogMessage
+from hello.models import Departments, JobTitles, LogMessage
 
 home_list_view = views.HomeListView.as_view(
     # :5 limits the results to the five most recent
@@ -16,6 +17,7 @@ urlpatterns = [
     path("hello/<name>", views.hello_there, name="hello_there"),
     path("Hello/<name>", views.hello_there, name="hello_there"),
     path("about/", views.about, name="about"),
-    path("contact/", views.contact, name="contact"),
     path("log/", views.log_message, name="log"),
+    path("job/", views.job_titles, name="job"),
+    path("departments/", views.departments, name="departments"),
 ]
