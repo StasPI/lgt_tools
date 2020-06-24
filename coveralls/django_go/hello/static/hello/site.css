@@ -14,12 +14,15 @@ input[name=department] {
     width: 80%;
 }
 
+input[name=supplier] {
+    width: 80%;
+}
 
 .navbar {
-    background-color: lightslategray;
-    font-size: 1em;
+    /* background-color: lightslategray; */
+    font-size: 1.5em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
+    color: black;
     padding: 8px 5px 8px 5px;
 }
 
@@ -36,6 +39,17 @@ input[name=department] {
 .navbar-item {
     font-variant: small-caps;
     margin-left: 30px;
+}
+
+.html {
+    background: linear-gradient(45deg, #EECFBA, #c5dde8);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .body-content {

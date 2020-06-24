@@ -17,16 +17,21 @@ class JobTitles(models.Model):
     job_title = models.CharField(max_length=300, primary_key=True)
 
     def __str__(self):
-        return f"'{self.job_title}'"
+        return f'{self.job_title}'
     
     
 class Departments(models.Model):
     department = models.CharField(max_length=300, primary_key=True)
 
     def __str__(self):
-        return f"'{self.department}'"
+        return f'{self.department}'
     
+class Suppliers(models.Model):
+    supplier = models.CharField(max_length=300, primary_key=True)
 
+    def __str__(self):
+        return f'{self.supplier}'
+    
 
 # class Users(models.Model):
 #     full_name
