@@ -3,5 +3,28 @@
 Base Unit
 {% endblock %}
 {% block content %}
-<p>start_page_base_unit</p>
+<table>
+    <tr>
+        <th>Job Titles</th>
+        <th>Departments</th>
+        <th>Suppliers</th>
+   </tr>
+   <tr>
+        <td>
+            <form action="{% url 'add_job_titles' %}"">
+            <button class="button" type="submit">Add Job Titles</button>
+            </form>
+        </td>
+        <td>
+            <form action="{% url 'add_departments' %}">
+            <button class="button" type="submit">Add Departments</button>
+            </form>
+        </td>
+        <td>
+            <form action="{% url 'add_suppliers' %}">
+            <button class="button" type="submit">Add Suppliers</button>
+            </form>
+        </td>
+    </tr>
+</table>
 {% endblock %}

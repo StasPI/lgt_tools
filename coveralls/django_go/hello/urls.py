@@ -22,10 +22,7 @@ urlpatterns = [
     path("start_page_base_unit/",
          views.start_page_base_unit,
          name="start_page_base_unit"),
-    path("job_titles/", views.job_titles, name="job_titles"),
-    path("departments/", views.departments, name="departments"),
-    path("suppliers/", views.suppliers, name="suppliers"),
-    path("start_page_base_unit/",
-         views.start_page_base_unit,
-         name="start_page_base_unit")
+    path("add_job_titles/", views.add_job_titles, name="add_job_titles"),
+    path("add_departments/", views.add_departments, name="add_departments"),
+    path("add_suppliers/", views.add_suppliers, name="add_suppliers"),
 ]

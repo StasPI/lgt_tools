@@ -50,7 +50,7 @@ def start_page_base_unit(request):
     return render(request, "base_unit/start_page_base_unit.html")
 
 
-def job_titles(request):
+def add_job_titles(request):
     form = JobTitlesForm(request.POST or None)
 
     if request.method == "POST":
@@ -59,10 +59,10 @@ def job_titles(request):
             job_title.save()
             return redirect("start_page_base_unit")
     else:
-        return render(request, "base_unit/job_titles.html", {"form": form})
+        return render(request, "base_unit/add_job_titles.html", {"form": form})
 
 
-def departments(request):
+def add_departments(request):
     form = DepartmentsForm(request.POST or None)
 
     if request.method == "POST":
@@ -71,10 +71,10 @@ def departments(request):
             departments.save()
             return redirect("start_page_base_unit")
     else:
-        return render(request, "base_unit/departments.html", {"form": form})
+        return render(request, "base_unit/add_departments.html", {"form": form})
 
 
-def suppliers(request):
+def add_suppliers(request):
     form = SuppliersForm(request.POST or None)
 
     if request.method == "POST":
@@ -83,4 +83,4 @@ def suppliers(request):
             suppliers.save()
             return redirect("start_page_base_unit")
     else:
-        return render(request, "base_unit/suppliers.html", {"form": form})
+        return render(request, "base_unit/add_suppliers.html", {"form": form})
