@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 class LogMessage(models.Model):
-    message = models.CharField(max_length=300)
+    message = models.CharField(max_length=200)
     log_date = models.DateTimeField("date logged")
 
     def __str__(self):
@@ -13,27 +13,34 @@ class LogMessage(models.Model):
 
 # Create your models here.
 
-class JobTitles(models.Model):
-    job_title = models.CharField(max_length=300, primary_key=True)
-
-    def __str__(self):
-        return f'{self.job_title}'
-    
-    
 class Departments(models.Model):
-    department = models.CharField(max_length=300, primary_key=True)
+    id_departments = models.AutoField(primary_key=True)
+    department = models.CharField(max_length=200, help_text="Enter field documentation")
 
     def __str__(self):
         return f'{self.department}'
+
+
+class JobTitles(models.Model):
+    id_job_title = models.AutoField(primary_key=True)
+    job_title = models.CharField(max_length=200)
+    departments = models.ForeignKey(Departments, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.job_title}'
+
+
+# class Staff(models.Model):
+#     personnel_number = models.PositiveIntegerField()
+#     full_name = models.CharField(max_length=100)
+#     email_adress = models.EmailField()
+#     department = models.CharField(max_length=200, primary_key=True)
+#     job_title = models.CharField(max_length=200, primary_key=True)
+
     
 class Suppliers(models.Model):
-    supplier = models.CharField(max_length=300, primary_key=True)
+    supplier = models.CharField(max_length=200, primary_key=True)
 
     def __str__(self):
         return f'{self.supplier}'
     
-
-# class Users(models.Model):
-#     full_name
-#     department
-#     job_title
