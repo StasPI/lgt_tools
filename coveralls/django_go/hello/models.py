@@ -4,7 +4,8 @@ from django.utils import timezone
 
 class Departments(models.Model):
     id_departments = models.AutoField(primary_key=True)
-    department = models.CharField(max_length=200, help_text="Enter field documentation")
+    department = models.CharField(max_length=200,
+                                  help_text="Enter field documentation")
 
     def __str__(self):
         return f'{self.department}'
@@ -21,8 +22,19 @@ class Staff(models.Model):
         return f'{self.job_title, self.full_name, self.email_adress, self.department, self.job_title}'
 
 
+# class Clothes(models.Model):
+#     supplier =
+#     type_clothes =
+#     size =
+#     article =
+
+
 class Suppliers(models.Model):
     supplier = models.CharField(max_length=200, primary_key=True)
 
     def __str__(self):
         return f'{self.supplier}'
+
+
+# python manage.py makemigrations
+# python manage.py migrate

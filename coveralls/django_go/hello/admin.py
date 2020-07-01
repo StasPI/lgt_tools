@@ -1,2 +1,7 @@
 from django.contrib import admin
-# Register your models here.
+
+from hello.models import Departments, Staff, Suppliers
+
+admin.site.register(Departments)
+admin.site.register(Suppliers)
+admin.site.register(Staff)
