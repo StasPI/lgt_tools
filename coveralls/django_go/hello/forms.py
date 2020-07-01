@@ -1,19 +1,6 @@
 from django import forms
 
-from hello.models import Departments, JobTitles, LogMessage, Suppliers
-
-
-class LogMessageForm(forms.ModelForm):
-    pass
-    class Meta:
-        model = LogMessage
-        fields = ("message",)   # NOTE: the trailing comma is required
-
-
-class JobTitlesForm(forms.ModelForm):
-    class Meta:
-        model = JobTitles
-        fields = ("job_title", )  # NOTE: the trailing comma is required
+from hello.models import Departments, Suppliers
 
 
 class DepartmentsForm(forms.ModelForm):

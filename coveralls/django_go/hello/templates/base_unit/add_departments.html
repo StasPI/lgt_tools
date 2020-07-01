@@ -3,6 +3,12 @@
     Departments
 {% endblock %}
 {% block content %}
+    <select>
+        <option> Staff </option>
+        {% for sta in staff %}
+            <option>{{ sta }}</option>
+        {% endfor %}
+    </select>
     <form method="POST" class="department">
         {% csrf_token %}
         {{ form.as_p }}

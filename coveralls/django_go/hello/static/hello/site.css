@@ -6,17 +6,6 @@ input[name=message] {
     width: 80%;
 }
 
-input[name=job_title] {
-    background-color: #ffffff;
-    color: rgb(27, 22, 22);
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: 2px solid green;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 80%;
-}
-
 input[name=department] {
     background-color: #ffffff;
     color: rgb(27, 22, 22);
@@ -25,7 +14,18 @@ input[name=department] {
     border: 2px solid green;
     border-radius: 4px;
     cursor: pointer;
-    width: 80%;
+    width: 60%;
+}
+
+input[name=job_title] {
+    background-color: #ffffff;
+    color: rgb(27, 22, 22);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 2px solid green;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60%;
 }
 
 input[name=supplier] {
@@ -36,7 +36,7 @@ input[name=supplier] {
     border: 2px solid green;
     border-radius: 4px;
     cursor: pointer;
-    width: 80%;
+    width: 60%;
 }
 
 

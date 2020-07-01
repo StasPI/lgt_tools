@@ -5,16 +5,10 @@ Base Unit
 {% block content %}
 <table>
     <tr>
-        <th>Job Titles</th>
         <th>Departments</th>
         <th>Suppliers</th>
    </tr>
    <tr>
-        <td>
-            <form action="{% url 'add_job_titles' %}"">
-            <button class="button" type="submit">Add Job Titles</button>
-            </form>
-        </td>
         <td>
             <form action="{% url 'add_departments' %}">
             <button class="button" type="submit">Add Departments</button>

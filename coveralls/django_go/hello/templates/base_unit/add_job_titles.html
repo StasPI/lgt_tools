@@ -3,9 +3,17 @@
     Job titles
 {% endblock %}
 {% block content %}
+    <select>
+        <option> Departments </option>
+        {% for dep in depart %}
+            <option>{{ dep.department }}</option>
+        {% endfor %}
+    </select>
+    <div>
     <form method="POST" class="job-title">
-        {% csrf_token %}
+        {% csrf_token %}    
         {{ form.as_p }}
         <button class="button" type="submit" class="save btn btn-default">Go up!</button>
     </form>
+    </div>
 {% endblock %}
