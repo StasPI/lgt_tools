@@ -4,16 +4,22 @@ from hello.models import Departments, Staff, Suppliers
 
 
 class DepartmentsForm(forms.ModelForm):
+    #форма прямого ввода
     class Meta:
         model = Departments
-        fields = ("department", )  # NOTE: the trailing comma is required
+        fields = ("department", )
 
 
 class SuppliersForm(forms.ModelForm):
     class Meta:
         model = Suppliers
-        fields = ("supplier", )  # NOTE: the trailing comma is required
+        fields = ("supplier", )
 
 
-class Popular(forms.Form):
-    popular = forms.CharField(label='', max_length=100)
+class PopularForm(forms.ModelForm):
+    # форма выбора из бд
+    popular = forms.ModelChoiceField(queryset=Staff.objects.values())
+    # popular = forms.ModelMultipleChoiceField(queryset=Staff.objects.all())
+    class Meta:
+        model = Departments
+        fields = ("popular",)

@@ -17,7 +17,7 @@ urlpatterns = [
          name="start_page_base_unit"),
 
     # path("add_departments/", staff_list_view, name="add_departments"),
-    path("add_departments/", views.add_departments, name="add_departments"),
+    # path("add_departments/", views.add_departments, name="add_departments"),
     path("add_departments/", views.get_popular, name="add_departments"),
     path("add_suppliers/", views.add_suppliers, name="add_suppliers"),
 ]
