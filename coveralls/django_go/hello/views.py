@@ -8,7 +8,6 @@ from django.views.generic import ListView
 from hello.forms import PopularForm
 from hello.models import Staff, Supp1, Supp2, JobTitles
 
-
 # class StaffListView(ListView):
 #     model = Staff
 
@@ -40,7 +39,6 @@ def start_page_base_unit(request):
 # #         return render(request, "base_unit/add_departments.html",
 # #                       {"form": form})
 
-
 # def add_suppliers(request):
 #     form = PopularForm(request.POST or None)
 
@@ -55,10 +53,11 @@ def start_page_base_unit(request):
 #     else:
 #         return render(request, "base_unit/add_suppliers.html", {"form": form})
 
-
 # ------------------------------------------------------------------------------------------
 # пример выборки из 2 баз в одну по id
 # ------------------------------------------------------------------------------------------
+
+
 def get_popular(request):
     form = PopularForm(request.POST or None)
 
