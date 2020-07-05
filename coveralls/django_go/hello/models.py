@@ -20,27 +20,26 @@ class Staff(models.Model):
 
 class Supplier(models.Model):
     supplier = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return f'{self.supplier}'
 
 
 class ClothingSize(models.Model):
     clothing_size = models.CharField(max_length=100)
-
-
-class TypeOfClothing(models.Model):
-    type_of_clothing = models.CharField(max_length=100)
-    clothing_size = models.ForeignKey(ClothingSize, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f'{self.clothing_size}'
 
 
 class Clothes(models.Model):
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
-    type_of_clothing = models.ForeignKey(TypeOfClothing,
-                                         on_delete=models.CASCADE)
     product_title = models.CharField(max_length=200)
     article = models.CharField(max_length=200)
     operational_life_in_months = models.PositiveSmallIntegerField()
 
     def __str__(self):
-        return f'{ self.supplier, self.type_of_clothing, self.product_title, self.article, self.operational_life_in_months}'
+        return f'{ self.supplier, self.product_title, self.article, self.operational_life_in_months}'
 
 
 # ------------------------------------------------------------------------------------------
