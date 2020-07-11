@@ -4,6 +4,7 @@ import datetime
 import os
 import shutil
 import psycopg2
+import sys
 
 sd_path = r'\\support-omts...'
 temp_path = r'\\OB\ОМТС\!ВОДА\temp'
@@ -12,6 +13,16 @@ application_mounths = []
 application_number_mounths = dict()
 path_months = []
 final = dict()
+
+def error(error_text):
+    from tkinter import Tk, Label
+    window = Tk()
+    window.title('Кажется, у кого-то проблемы...')
+    lbl0 = Label(window, text=error_text,
+                font=('Calibri', 30))
+    lbl0.grid(column=0, row=0)
+    window.mainloop()
+    sys.exit(0)
 
 
 def clean(temp_path):
@@ -41,12 +52,14 @@ def mod_bigint_time(mod_t):
 
 ago = mod_bigint_time(nubmer_days_ago)
 now = mod_bigint_time(now_date)
-
-connection = psycopg2.connect(user="",
-                              password="",
-                              host="",
-                              port="",
-                              database="")
+try:
+    connection = psycopg2.connect(user="",
+                                password="",
+                                host="",
+                                port="",
+                                database="")
+except:
+    error('Нет соединения с базой данных')    
 
 cursor = connection.cursor()
 cursor.execute(f"""SELECT 
