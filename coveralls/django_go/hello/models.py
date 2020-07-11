@@ -5,7 +5,7 @@ from django.utils import timezone
 class Staff(models.Model):
     personnel_number = models.PositiveIntegerField(primary_key=True)
     full_name = models.CharField(max_length=100)
-    email_adress = models.EmailField
+    email_adress = models.EmailField(max_length=100)
     department = models.CharField(max_length=200)
     job_title = models.CharField(max_length=200)
 
@@ -13,21 +13,23 @@ class Staff(models.Model):
         return f'{self.personnel_number, self.full_name, self.email_adress, self.department, self.job_title}'
 
 
-# ------------------------------------------------------------------------------------------
-# Models for building clothing
-# ------------------------------------------------------------------------------------------
+'''
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Models for building clothing
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+'''
 
 
 class Supplier(models.Model):
     supplier = models.CharField(max_length=200)
-    
+
     def __str__(self):
         return f'{self.supplier}'
 
 
 class ClothingSize(models.Model):
     clothing_size = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return f'{self.clothing_size}'
 
@@ -42,9 +44,11 @@ class Clothes(models.Model):
         return f'{ self.supplier, self.product_title, self.article, self.operational_life_in_months}'
 
 
-# ------------------------------------------------------------------------------------------
-# пример выборки из 2 баз в одну по id
-# ------------------------------------------------------------------------------------------
+'''
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+пример выборки из 2 баз в одну по id
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+'''
 
 
 class Supp1(models.Model):
