@@ -14,12 +14,12 @@ application_number_mounths = dict()
 path_months = []
 final = dict()
 
+
 def error_message(error_text):
     from tkinter import Tk, Label
     window = Tk()
     window.title('Кажется, у кого-то проблемы...')
-    lbl0 = Label(window, text=error_text,
-                font=('Calibri', 30))
+    lbl0 = Label(window, text=error_text, font=('Calibri', 30))
     lbl0.grid(column=0, row=0)
     window.mainloop()
     sys.exit(0)
@@ -54,12 +54,12 @@ ago = mod_bigint_time(nubmer_days_ago)
 now = mod_bigint_time(now_date)
 try:
     connection = psycopg2.connect(user="",
-                                password="",
-                                host="",
-                                port="",
-                                database="")
+                                  password="",
+                                  host="",
+                                  port="",
+                                  database="")
 except:
-    error_message('Нет соединения с базой данных')    
+    error_message('Нет соединения с базой данных')
 
 cursor = connection.cursor()
 cursor.execute(f"""SELECT 
