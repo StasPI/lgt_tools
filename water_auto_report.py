@@ -14,7 +14,7 @@ application_number_mounths = dict()
 path_months = []
 final = dict()
 
-def error(error_text):
+def error_message(error_text):
     from tkinter import Tk, Label
     window = Tk()
     window.title('Кажется, у кого-то проблемы...')
@@ -59,7 +59,7 @@ try:
                                 port="",
                                 database="")
 except:
-    error('Нет соединения с базой данных')    
+    error_message('Нет соединения с базой данных')    
 
 cursor = connection.cursor()
 cursor.execute(f"""SELECT 
@@ -205,13 +205,17 @@ def copy_past(full_path_month, file_month_list):
 
 # Where more applications that month for the report we consider relevant
 application_mounths = list(application_mounths)
-if len(application_mounths) > 1:
+if len(application_mounths) > 2:
+    error_message('Слишком много не закрытых заявок! Закройте старые заявки.')
+elif len(application_mounths) == 2:
     if len(final[application_mounths[0]]) > len(final[application_mounths[1]]):
         copy_past(temp_path, final[application_mounths[0]])
     else:
         copy_past(temp_path, final[application_mounths[1]])
 elif len(application_mounths) == 1:
     copy_past(temp_path, final[application_mounths[0]])
+else:
+    error_message('Заявок найдено не было...')
 '''
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 run a report in which you need to update data
