@@ -128,9 +128,8 @@ control_months = (generator_of_months(somedate,
                   generator_of_months(somedate, 2))
 
 # Creating a path to the folders in which you want to search
-for month in control_months:
-    path_month = os.path.join(sd_path, month)
-    path_months.append(path_month)
+
+path_months = [os.path.join(sd_path, month) for month in control_months]
 '''
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 create a dictionary with paths to the desired application files
