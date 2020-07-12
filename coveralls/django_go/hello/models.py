@@ -46,6 +46,24 @@ class Clothes(models.Model):
 
 '''
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+финальная модель владения
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+'''
+
+
+class People(models.Model):
+    staff_personnel_number = models.ForeignKey(Staff, on_delete=models.CASCADE)
+    clothes_id = models.ForeignKey(Clothes, on_delete=models.CASCADE)
+    size_id = models.ForeignKey(ClothingSize, on_delete=models.CASCADE)
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    def __str__(self):
+        return f'{self.staff_personnel_number, self.clothes_id,self.size_id, self.start_date, self.end_date}'
+
+
+'''
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 пример выборки из 2 баз в одну по id
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '''
